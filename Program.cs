@@ -3,6 +3,7 @@ using NLog.Web;
 using System.IO;
 using System.Linq;
 
+
 namespace BlogsConsole
 {
     class Program
