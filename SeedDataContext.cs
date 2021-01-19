@@ -21,10 +21,10 @@ namespace SeedData
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            IConfiguration config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", true, true)
-                .Build();
-            optionsBuilder.UseSqlServer(@config["SeedDataContext:ConnectionString"]);
+            // IConfiguration config = new ConfigurationBuilder()
+            //     .AddJsonFile("appsettings.json", true, true)
+            //     .Build();
+            optionsBuilder.UseSqlServer(@"Server=bitsql.wctc.edu;Database=SeededData_21_JEB;User ID=jbelow3;Password=000538646");
         }
     }
 }
