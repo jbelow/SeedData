@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-
 namespace SeedData
 {
-    public class Event
+    public class SeedEvent
     {
         public int EventId { get; set; }
         public DateTime TimeStamp { get; set; }
