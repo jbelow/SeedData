@@ -4,12 +4,18 @@ namespace SeedData
 {
     public class SeedDataContext : DbContext
     {
-        public DbSet<Blog> Blogs { get; set; }
-        public DbSet<Post> Posts { get; set; }
+        public DbSet<Location> Location { get; set; }
+        public DbSet<SeedEvent> SeedEvents { get; set; }
 
-        public void AddBlog(Blog blog)
+        public void AddLocation(Location location)
         {
-            this.Blogs.Add(blog);
+            this.Location.Add(location);
+            this.SaveChanges();
+        }
+
+        public void AddSeedEvent(SeedEvent seedEvent)
+        {
+            this.SeedEvent.Add(seedevent);
             this.SaveChanges();
         }
 
