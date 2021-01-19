@@ -1,3 +1,5 @@
+using System;
+
 namespace SeedData
 {
     public class SeedEvent
