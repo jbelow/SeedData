@@ -4,7 +4,7 @@ namespace SeedData
 {
     public class SeedEvent
     {
-        public int EventId { get; set; }
+        public int SeedEventId { get; set; }
         public DateTime TimeStamp { get; set; }
         public bool Flagged { get; set; }
         // foreign key for location 
