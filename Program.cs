@@ -78,7 +78,7 @@ namespace SeedData
                 else if (choice == "2")
                 {
 
-                    // display blogs
+                    // display events
                     // var query = db.SeedEvent.OrderBy(s => s.TimeStamp);
                     var query =
                         from SeedEvent in db.SeedEvent
