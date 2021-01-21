@@ -82,9 +82,10 @@ namespace SeedData
                     // var query = db.SeedEvent.OrderBy(s => s.TimeStamp);
                     var query =
                         from SeedEvent in db.SeedEvent
-                        join Location in db.Location on SeedEvent.SeedEventId equals Location.LocationId into se
-                        from testing in se.DefaultIfEmpty()
-                        select new { eventTime = SeedEvent.TimeStamp, locationName = testing.Name};
+                        orderby SeedEvent.TimeStamp
+                        join Location in db.Location on SeedEvent.LocationId equals Location.LocationId into se
+                        from sl in se.DefaultIfEmpty()
+                        select new { eventTime = SeedEvent.TimeStamp, locationName = sl.Name};
 
                     Console.WriteLine($"{query.Count()} events returned");
                     foreach (var item in query)
