@@ -23,7 +23,7 @@ namespace SeedData
                 string choice;
                 var db = new SeedDataContext();
 
-                Console.WriteLine("1) Run the seed event \n2) View the seeded data");
+                Console.WriteLine("1) Run the seed event \n2) View the seeded data\n3)add a new location");
                 choice = Console.ReadLine();
                 Console.Clear();
                 logger.Info("Option {choice} selected", choice);
@@ -92,6 +92,25 @@ namespace SeedData
                     {
                         Console.WriteLine(item.eventTime + " - " + item.locationName);
                     }
+                }
+                else if (choice == "3"){
+                // Create and save a new Location
+                Console.Write("Enter a name for a new Location: ");
+                var name = Console.ReadLine();
+
+                var location = new Location { Name = name };
+
+                db.AddLocation(location);
+                logger.Info("Location added - {name}", name);
+
+                // Display all Locations from the database
+                var query = db.Location.OrderBy(b => b.Name);
+
+                Console.WriteLine("All blogs in the database:");
+                foreach (var item in query)
+                {
+                    Console.WriteLine(item.Name);
+                }
                 }
 
 
